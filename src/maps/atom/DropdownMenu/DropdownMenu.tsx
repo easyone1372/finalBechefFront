@@ -22,6 +22,7 @@ const DropdownMenu = ({ onLogout }: DropdownMenuProps) => {
     onLogout();
     console.log("Logged out");
     alert("로그아웃 되었습니다.");
+    navigate("/sign-in"); // 로그아웃 시 로그인 페이지로 이동
   };
 
   const handleMyPage = () => {

@@ -1,4 +1,3 @@
-import InfoSubTitle from "../../atom/InfoSubTitle";
 import InfoDescriptionBox from "./InfoDescriptionBox";
 import InfoTitleBox from "./InfoTitleBox";
 import InfoTopImage from "./InfoTopImage";
@@ -22,16 +21,15 @@ const InfoPageComponent = ({
   store_id,
   member_idx,
 }: InfoPageComponentProps) => {
-  console.log("InfoPageComponent에서 렌더됨:", {
-    store_name,
-    store_rating,
-    store_image_url,
-    store_address,
-    store_phone,
-    store_id,
-    member_idx,
-  });
-
+  // console.log("InfoPageComponent에서 렌더됨:", {
+  //   store_name,
+  //   store_rating,
+  //   store_image_url,
+  //   store_address,
+  //   store_phone,
+  //   store_id,
+  //   member_idx,
+  // });
   return (
     <div className="max-w-800 w-full my-0 mx-auto">
       <InfoTopImage imgUrl={store_image_url} />

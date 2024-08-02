@@ -1,7 +1,5 @@
 import { useState } from "react";
 import InfoEditBtn from "../../atom/InfoEditBtn";
-import axios from "axios";
-import InfoReviewBox from "./InfoReviewBox";
 import InfoReviewEdit from "./InfoReviewEdit";
 
 type InfoReviewEditBoxProps = {

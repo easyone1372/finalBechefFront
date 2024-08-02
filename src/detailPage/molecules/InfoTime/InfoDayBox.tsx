@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { InfoPageBoxProps } from "../InfoPageTopPart/InfoPageBox";
 import axios from "axios";
 
 import { INFO_TIME } from "../../../Urls/URLList";

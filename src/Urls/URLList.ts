@@ -2,10 +2,14 @@ import { Kit } from "../admin/atom/Kit/Kit";
 
 const DOMAIN = `http://localhost:8080`; // test용 url
 const SERVER_URL = `https://finalbechefback-d9ewh5bbfnbubtes.koreacentral-01.azurewebsites.net`; // 배포 url
-const API_URL = `${DOMAIN}/api`;
-const ADMIN_URL = `${DOMAIN}/api/admin`;
-const INFO_URL = `${DOMAIN}/api/info`;
-const MEMBER_URL = `${DOMAIN}/bechef/member`;
+const API_URL = `${SERVER_URL}/api`;
+const ADMIN_URL = `${SERVER_URL}/api/admin`;
+const INFO_URL = `${SERVER_URL}/api/info`;
+const MEMBER_URL = `${SERVER_URL}/bechef/member`;
+
+// map 페이지 검색 결과
+export const MAP_SEARCH = (query: string) =>
+  `${SERVER_URL}/bechef/search?query=${query}`;
 
 // ADMIN 페이지
 export const ADMIN_UPDATE_QUANTITY = (kit: Kit) =>
@@ -34,10 +38,8 @@ export const INFO_REVIEW_LIST = (store_id: number) =>
 export const INFO_REVIEW_INPUT = () => `${INFO_URL}/review_input`;
 export const INFO_REVIEW_DELETE = (review_id: number) =>
   `${INFO_URL}/review_delete/${review_id}`;
-export const INFO_REVEIW_UPDATE = (reviewId: number) =>
-  `${INFO_URL}/review_update/${reviewId}`;
-export const INFO_UPDATE_STORE_RATING = (store_id: number) =>
-  `${INFO_URL}/upate_store_rating/${store_id}`;
+export const INFO_REVIEW_UPDATE = (reviewId: number) =>
+  `${INFO_URL}/review_update/${reviewId}`; //오타
 export const INFO_AVERAGE_RATING = (store_id: number) =>
   `${INFO_URL}/average_rating/${store_id}`;
 
@@ -47,8 +49,6 @@ export const MAP_MODAL_FAVORITE = (idx: Number) =>
 export const MAP_MODAL_REVIEW = (idx: Number) =>
   `${API_URL}/reviews?memberIdx=${idx}`;
 export const MAP_DELETE_ACCOUNT = () => `${MEMBER_URL}`;
-export const MAP_SEARCH = (query: string) =>
-  `${DOMAIN}/bechef/search?query=${query}`;
 
 // 로그인 회원가입 페이지
 export const LOGIN_POST = () => `${MEMBER_URL}/login`;

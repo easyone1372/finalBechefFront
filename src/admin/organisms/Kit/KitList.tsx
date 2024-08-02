@@ -1,4 +1,3 @@
-
 import React from "react";
 import KitItem from "./KitItem";
 import { Kit } from "../../atom/Kit/Kit";
@@ -9,7 +8,7 @@ type KitListProps = {
 };
 
 const KitList = ({ kits, onUpdateKit }: KitListProps) => (
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
     {kits.map((kit) => (
       <KitItem key={kit.menu_id} kit={kit} onUpdate={onUpdateKit} />
     ))}

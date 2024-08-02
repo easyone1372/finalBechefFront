@@ -1,5 +1,4 @@
 //밀키트 메뉴 출력 컴포넌트
-
 import InfoMenuImage from "../../atom/InfoMenuImage";
 import InfoMenuIngredientBox from "../../atom/InfoMenuIngredientBox";
 import InfoMenuTextBox from "../../atom/InfoMenuTextBox";

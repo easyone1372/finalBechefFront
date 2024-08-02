@@ -24,7 +24,7 @@ const InfoClickHeart = ({ storeId }: InfoClickHeartProps) => {
     if (token) {
       try {
         const decodedToken: any = jwtDecode(token);
-        console.log("decodedToken", decodedToken);
+        //console.log("decodedToken", decodedToken);
         setMemberIdx(decodedToken.idx);
       } catch (error) {
         console.error("토큰 디코딩 중 오류 발생:", error);
@@ -43,13 +43,13 @@ const InfoClickHeart = ({ storeId }: InfoClickHeartProps) => {
               headers: { Authorization: `Bearer ${token}` },
             }
           );
-          console.log("서버 응답 전체 데이터:", response.data);
-          console.log("서버 응답 타입:", typeof response.data);
+          // console.log("서버 응답 전체 데이터:", response.data);
+          // console.log("서버 응답 타입:", typeof response.data);
           const data = response.data;
-          console.log("서버 응답 전체 데이터:", data);
-          console.log("받은데이터 찜", data.favorite);
+          // console.log("서버 응답 전체 데이터:", data);
+          //console.log("받은데이터 찜", data.favorite);
           setIsFavorite(data.favorite);
-          console.log("설정된 isFavorite 값:", data.favorite);
+          // console.log("설정된 isFavorite 값:", data.favorite);
         } catch (error) {
           console.error("찜 상태 조회 중 오류 발생:", error);
         }
@@ -60,9 +60,9 @@ const InfoClickHeart = ({ storeId }: InfoClickHeartProps) => {
     }
   }, [storeId, memberIdx]);
 
-  useEffect(() => {
-    console.log("현재 isFavorite 상태:", isFavorite);
-  }, [isFavorite]);
+  // useEffect(() => {
+  //   console.log("현재 isFavorite 상태:", isFavorite);
+  // }, [isFavorite]);
 
   const handleHeartClick = useCallback(async () => {
     if (memberIdx === null) {
@@ -85,8 +85,7 @@ const InfoClickHeart = ({ storeId }: InfoClickHeartProps) => {
         }
       );
       setIsFavorite(response.data.favorite);
-      console.log("업데이트된 찜 상태:", response.data.favorite);
-
+      // console.log("업데이트된 찜 상태:", response.data.favorite);
       if (response.data.favorite) {
         alert("찜 목록에 추가되었습니다");
       } else {

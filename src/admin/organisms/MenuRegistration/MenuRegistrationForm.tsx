@@ -68,7 +68,7 @@ const MenuRegistrationForm: React.FC<MenuRegistrationFormProps> = ({
         imageData,
         {
           params: {
-            key: "115376878bc76479b9c6775a72f120aa",
+            key: "115376878bc76479b9c6775a72f120aa", // 각자 키 넣기
           },
         }
       );
@@ -83,6 +83,7 @@ const MenuRegistrationForm: React.FC<MenuRegistrationFormProps> = ({
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     const submissionData = {
       ...formData,
       menuIngredients: selectedIngredients.join(", "),

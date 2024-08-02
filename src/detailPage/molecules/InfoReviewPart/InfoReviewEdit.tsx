@@ -1,5 +1,4 @@
 import { ChangeEvent, useEffect, useState } from "react";
-import InfoEditBtn from "../../atom/InfoEditBtn";
 import InfoReviewStarComponent from "./InfoReviewStarComponent";
 
 type InfoReviewEditProps = {
@@ -54,7 +53,6 @@ const InfoReviewEdit = ({
       />
       <textarea
         value={editReview}
-        // onChange={(e) => setEditReview(e.target.value)}
         onChange={handleInputChange} //0801 추가
         className="border p-2 resize-none"
         maxLength={maxCommentLength}

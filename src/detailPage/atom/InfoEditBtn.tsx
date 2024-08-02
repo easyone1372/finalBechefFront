@@ -4,7 +4,7 @@ import { InfoBtnProps } from "./InfoProps";
 const InfoEditBtn = ({ content, clickEvent }: InfoBtnProps) => {
   return (
     <div
-      className="text-skipLB text-base hover:cursor-pointer w-px31"
+      className="text-skipLB text-base hover:cursor-pointer w-px31 h-px20"
       onClick={clickEvent}
     >
       {content}

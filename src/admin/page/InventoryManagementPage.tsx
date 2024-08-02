@@ -82,11 +82,13 @@ const InventoryManagementPage = () => {
         }
       };
       loadKits();
+      setKits([]); // '매장을 선택하세요' 를 선택하면 빈 배열 설정
     }
   }, [selectedStoreId, stores, isAdmin]);
 
   const handleStoreChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedStoreId(Number(event.target.value));
+    const storeId = Number(event.target.value); // storeId 선언
+    setSelectedStoreId(storeId || null); // 매장 or Null 값
   };
 
   const handleKitUpdate = (updatedKit: Kit) => {
@@ -124,6 +126,7 @@ const InventoryManagementPage = () => {
                 onChange={handleStoreChange}
                 className="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
               >
+                <option value="">매장을 선택하세요</option>
                 {stores.map((store) => (
                   <option key={store.storeId} value={store.storeId}>
                     {store.storeName}

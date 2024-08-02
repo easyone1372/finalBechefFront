@@ -23,11 +23,7 @@ const LoginForm = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        // "http://localhost:8080/bechef/member/login"
-        LOGIN_POST(),
-        { id, pwd }
-      );
+      const response = await axios.post(LOGIN_POST(), { id, pwd });
       const apiResponse = response.data;
       console.log("API Response:", apiResponse);
 

@@ -15,7 +15,7 @@ const Search = ({ setResults, onMarkerHover }: SearchProps) => {
   const [query, setQuery] = useState("");
   const [results, setResultsState] = useState<Store[]>([]);
   const [sortOption, setSortOption] = useState<string>("");
-  const resultsContainerRef = useRef<HTMLUListElement>(null); //0802 추가
+  const resultsContainerRef = useRef<HTMLUListElement>(null);
 
   const handleSearch = async () => {
     try {
@@ -42,7 +42,6 @@ const Search = ({ setResults, onMarkerHover }: SearchProps) => {
     }
     setResultsState(sortedResults);
 
-    //0802 수정
     if (resultsContainerRef.current) {
       resultsContainerRef.current.scrollTo({ top: 0, behavior: "smooth" });
     }

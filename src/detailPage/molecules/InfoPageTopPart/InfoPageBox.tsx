@@ -42,7 +42,6 @@ const InfoPageBox = ({
     return <div>Loading...</div>;
   }
   // console.log("infoPageData:", infoPageData);
-
   return (
     <div className="drop-shadow-lg bg-white rounded-lg">
       <InfoPageComponent

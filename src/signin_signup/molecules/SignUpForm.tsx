@@ -9,7 +9,7 @@ import {
   validateConfirmPwd,
   validateEmail,
   validatePhone,
-  validateaddress,
+  validateAddress,
 } from "./SignUpCheck";
 import FormField from "./FormField";
 import { useNavigate } from "react-router-dom";
@@ -92,7 +92,7 @@ const SignUpForm: React.FC = () => {
   const handleAdressChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setAdress(value);
-    setErrors((prev) => ({ ...prev, address: validateaddress(value) }));
+    setErrors((prev) => ({ ...prev, address: validateAddress(value) }));
   };
 
   const navigate = useNavigate();
@@ -105,37 +105,60 @@ const SignUpForm: React.FC = () => {
 
   // 회원가입 제출 핸들러
   const handleSignUp = async () => {
-    // 모든 필드의 에러 검사
-    const hasErrors = Object.values(errors).some((error) => error !== "");
-    if (!hasErrors) {
-      try {
-        // 서버에 회원가입 요청
-        const response = await axios.post(REGISTER_POST(), {
-          name,
-          id,
-          pwd,
-          email,
-          phone,
-          address,
-        });
-        console.log("서버 응답:", response.data);
-        alert("가입 성공!");
-        goToLogin();
-      } catch (error) {
-        if (axios.isAxiosError(error)) {
-          console.error("Sign-up error", error.response?.data);
-          alert(
-            `가입 중 오류가 발생했습니다: ${
-              error.response?.data?.error || error.message
-            }`
-          );
-        } else {
-          console.error("Sign-up error", error);
-          alert("가입 중 알 수 없는 오류가 발생했습니다.");
-        }
-      }
-    } else {
+    // 모든 필드가 입력되었는지 확인
+    if (!name || !id || !pwd || !confirmPwd || !email || !phone || !address) {
+      alert("모든 필드를 입력해주세요.");
+      return;
+    }
+
+    // 모든 필드의 유효성 재확인
+    const newErrors = {
+      name: validateName(name),
+      id: validateId(id),
+      pwd: validatePwd(pwd),
+      confirmPwd: validateConfirmPwd(pwd, confirmPwd),
+      email: validateEmail(email),
+      phone: validatePhone(phone),
+      address: validateAddress(address),
+    };
+
+    // 에러가 있는지 확인
+    const hasErrors = Object.values(newErrors).some((error) => error !== "");
+
+    if (hasErrors) {
+      setErrors(newErrors);
       alert("입력 정보를 다시 확인해주세요.");
+      return;
+    }
+
+    try {
+      // 서버에 회원가입 요청
+      const response = await axios.post(REGISTER_POST(), {
+        name,
+        id,
+        pwd,
+        email,
+        phone,
+        address,
+      });
+      console.log("서버 응답:", response.data);
+
+      try {
+        const { status, message } = response.data;
+
+        if (status === "ERROR") {
+          alert(message);
+        } else if (status === "SUCCESS") {
+          alert(message);
+          navigate("/sign-in");
+        }
+      } catch (error) {
+        console.log("기타 오류 : ", error);
+        alert("회원가입중 오류");
+      }
+    } catch (error) {
+      console.error("요청 오류", error);
+      alert("ㅅㄱ");
     }
   };
 

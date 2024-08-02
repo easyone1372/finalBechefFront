@@ -5,19 +5,24 @@ import { Store } from "../atom/SearchResults/SearchResults";
 
 const MapPage = () => {
   const [results, setResults] = useState<Store[]>([]); // Store[] 타입으로 초기화
+  const [hoveredMarker, setHoveredMarker] = useState<number | null>(null); // hover된 마커의 storeId 상태
 
   const handleMarkerHover = (storeId: number | null) => {
-    //임의 이벤트 집어넣음
-    console.log("Hovered Store ID:", storeId);
+    setHoveredMarker(storeId);
   };
 
   return (
-    <div className="flex h-screen gap-1 overflow-hidden">
+    <div className="flex h-screen gap-1 ">
       <Search setResults={setResults} onMarkerHover={handleMarkerHover} />
       <div className="flex-grow">
-        <MyMap results={results} onMarkerHover={handleMarkerHover} />
+        <MyMap
+          results={results}
+          onMarkerHover={handleMarkerHover}
+          hoveredMarker={hoveredMarker}
+        />
       </div>
     </div>
   );
 };
+
 export default MapPage;

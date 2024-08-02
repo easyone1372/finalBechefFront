@@ -39,8 +39,8 @@ const InfoPage = () => {
   }, [fetchAverageRating, ratingKey]);
 
   return (
-    <div className="bg-gray-100">
-      <div className="bg-npLG w-screen">
+    <div className="bg-gray-100 overflow-hidden">
+      <div className="bg-npLG w-screen overflow-hidden">
         <div className="max-w-800 w-full my-0 mx-auto gap-6 bg-white mb-11">
           <InfoHeader />
           <InfoPageBox

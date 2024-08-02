@@ -1,6 +1,4 @@
 import { useCallback, useEffect, useState } from "react";
-import InfoReviewInput from "../../atom/InfoReviewInput";
-import InfoSubmitBtn from "../../atom/InfoSubmitBtn";
 import InfoSubTitle from "../../atom/InfoSubTitle";
 import { InfoReviewComponentProps } from "./InfoReviewComponent";
 import InfoReviewInputBox from "./InfoReviewInputBox";
