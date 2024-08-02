@@ -11,7 +11,7 @@ import {
   INFO_REVIEW_DELETE,
   INFO_REVIEW_LIST,
   INFO_UPDATE_STORE_RATING,
-} from "../../Urls/URLList";
+} from "../../../Urls/URLList";
 
 type InfoReviewListProps = {
   store_id: number;
@@ -136,9 +136,13 @@ const InfoReviewList = ({
   );
 
   return (
-    <div className="max-w-768 w-full my-0 mx-auto flex flex-col gap-px20">
+    //0801 수정
+    <div className="max-w-768 w-full h-px600 overflow-scroll my-0 mx-auto flex flex-col gap-px20">
       {infoReviewList.map((data) => (
-        <div key={data.reviewId} className="relative flex justify-between">
+        <div
+          key={data.reviewId}
+          className="relative flex justify-between w-full"
+        >
           <InfoReviewComponent {...data} />
           {currentUser !== null && currentUser.idx === data.memberIdx && (
             <InfoReviewEditBox

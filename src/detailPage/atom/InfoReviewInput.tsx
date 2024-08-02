@@ -1,16 +1,13 @@
 import { useEffect, useState } from "react";
+import { InfoReviewInputProps } from "./InfoProps";
 
 //상세 페이지 - 리뷰 작성
-type InfoReviewInputProps = {
-  setComment: React.Dispatch<React.SetStateAction<string>>;
-  reset?: boolean;
-};
-
 const InfoReviewInput: React.FC<InfoReviewInputProps> = ({
   setComment,
   reset,
 }) => {
   const [inputValue, setInputValue] = useState("");
+  const maxCommentLength = 200;
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInputValue(event.target.value);
@@ -25,12 +22,18 @@ const InfoReviewInput: React.FC<InfoReviewInputProps> = ({
   }, [reset]);
 
   return (
-    <textarea
-      value={inputValue} // controlled component로 변경
-      onChange={handleChange}
-      className="border rounded-lg p-2 w-full"
-      placeholder="리뷰를 작성하세요"
-    />
+    <div className="w-full">
+      <textarea
+        value={inputValue} // controlled component로 변경
+        onChange={handleChange}
+        className="border rounded-lg p-2 w-full resize-none h-px100"
+        placeholder="리뷰를 작성하세요"
+        maxLength={maxCommentLength}
+      />
+      <div className="text-right text-sm">
+        {inputValue.length}/{maxCommentLength}
+      </div>
+    </div>
   );
 };
 

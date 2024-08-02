@@ -1,7 +1,7 @@
-import { infoContentProps } from "./InfoImage";
+import { InfoContentProps } from "./InfoProps";
 
-const InfoMenuText = ({ content }: infoContentProps) => {
-  return <div>{content}</div>;
+const InfoMenuText = ({ content }: InfoContentProps) => {
+  return <div className="break-all">{content}</div>;
 };
 
 export default InfoMenuText;

@@ -1,5 +1,5 @@
-import Logo from "../../maps/atom/Logo/Logo";
-import InfoBackBtn from "../atom/InfoBackBtn";
+import Logo from "../../../maps/atom/Logo/Logo";
+import InfoBackBtn from "../../atom/InfoBackBtn";
 
 const InfoHeader = () => {
   return (
@@ -10,7 +10,7 @@ const InfoHeader = () => {
       <div className="w-40 flex items-center ">
         <Logo url="https://i.ibb.co/98s8n03/Logo.png" />
       </div>
-      <div className="w-px50"></div> {/* 로고 가운데 정렬용 div */}
+      <div className="w-px50"></div>
     </div>
   );
 };

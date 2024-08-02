@@ -1,4 +1,4 @@
-import InfoSubTitle from "../atom/InfoSubTitle";
+import InfoSubTitle from "../../atom/InfoSubTitle";
 import InfoMenuList, { InfoMenuListProps } from "./InfoMenuList";
 
 const InfoMenuBox = ({ store_id }: InfoMenuListProps) => {

@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
-import { InfoPageBoxProps } from "./InfoPageBox";
+import { InfoPageBoxProps } from "../InfoPageTopPart/InfoPageBox";
 import axios from "axios";
-import InfoDayDetail, { InfoDayDetailProps } from "../atom/InfoDayDetail";
-import { INFO_TIME } from "../../Urls/URLList";
+
+import { INFO_TIME } from "../../../Urls/URLList";
+import { InfoDayDetailProps } from "../../atom/InfoProps";
+import InfoDayDetail from "../../atom/InfoDayDetail";
 
 export type InfoDayBoxProps = {
   store_id: number;

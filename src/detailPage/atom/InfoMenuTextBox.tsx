@@ -1,10 +1,5 @@
 import InfoMenuText from "./InfoMenuText";
-
-type InfoMenuTextBoxProps = {
-  menuDes: string;
-  menuText: string | number;
-  menuUnit?: string;
-};
+import { InfoMenuTextBoxProps } from "./InfoProps";
 
 const InfoMenuTextBox = ({
   menuDes,

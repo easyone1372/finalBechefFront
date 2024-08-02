@@ -1,9 +1,4 @@
-export type InfoDayDetailProps = {
-  dayInfo: string;
-  dayOpenTime: string;
-  dayCloseTime: string;
-  isClosed: boolean;
-};
+import { InfoDayDetailProps } from "./InfoProps";
 
 const InfoDayDetail = ({
   dayInfo,

@@ -1,9 +1,9 @@
 import { useLocation, useParams } from "react-router-dom";
-import InfoHeader from "../molecules/InfoHeader";
-import InfoPageBox from "../molecules/InfoPageBox";
-import InfoMiddleBox from "../molecules/InfoMiddleBox";
-import InfoMenuBox from "../molecules/InfoMenuBox";
-import InfoReviewBox from "../molecules/InfoReviewBox";
+import InfoHeader from "../molecules/InfoPageTopPart/InfoHeader";
+import InfoPageBox from "../molecules/InfoPageTopPart/InfoPageBox";
+import InfoMiddleBox from "../molecules/InfoTime/InfoMiddleBox";
+import InfoMenuBox from "../molecules/InfoMenuPart/InfoMenuBox";
+import InfoReviewBox from "../molecules/InfoReviewPart/InfoReviewBox";
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import { INFO_AVERAGE_RATING } from "../../Urls/URLList";
@@ -36,7 +36,7 @@ const InfoPage = () => {
 
   useEffect(() => {
     fetchAverageRating();
-  }, [fetchAverageRating, ratingKey]); // ratingKey가 변경될 때마다 호출
+  }, [fetchAverageRating, ratingKey]);
 
   return (
     <div className="bg-gray-100">
@@ -56,7 +56,7 @@ const InfoPage = () => {
             member_idx={member_idx ? Number(member_idx) : null}
             onRatingUpdate={() => {
               handleRatingUpdate();
-              fetchAverageRating(); // 별점 갱신 함수 호출
+              fetchAverageRating();
             }}
           />
         </div>

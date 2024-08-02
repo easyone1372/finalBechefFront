@@ -1,6 +1,6 @@
-import InfoImage from "../atom/InfoImage";
+import InfoImage from "../../atom/InfoImage";
 
-//상단 이미지 컴포넌트 - 2장
+//상단 이미지 컴포넌트
 type InfoTopImageProps = {
   imgUrl: string;
 };

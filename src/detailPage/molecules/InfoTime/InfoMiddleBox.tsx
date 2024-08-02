@@ -1,6 +1,6 @@
 //중간 박스 - 영업시간 부제목, 요일, 영업시간 출력(map?)
 
-import InfoSubTitle from "../atom/InfoSubTitle";
+import InfoSubTitle from "../../atom/InfoSubTitle";
 import InfoDayBox, { InfoDayBoxProps } from "./InfoDayBox";
 
 const InfoMiddleBox = ({ store_id }: InfoDayBoxProps) => {

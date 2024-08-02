@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
-import InfoEmptyStarIcon from "../atom/InfoEmptyStarIcon";
-import InfoStarIcon from "../atom/InfoStarIcon";
+import {
+  InfoEmptyStarIcon,
+  InfoSolidStarIcon,
+} from "../../atom/InfoIconsModule";
 
 type InfoReviewStarComponentProps = {
   totalStars: number;
@@ -54,7 +56,7 @@ const InfoReviewStarComponent: React.FC<InfoReviewStarComponentProps> = ({
             style={{ cursor: "pointer" }}
           >
             {starValue <= (hover !== null ? hover + 1 : rating) ? (
-              <InfoStarIcon />
+              <InfoSolidStarIcon />
             ) : (
               <InfoEmptyStarIcon />
             )}

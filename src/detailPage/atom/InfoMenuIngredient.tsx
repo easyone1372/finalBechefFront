@@ -1,6 +1,5 @@
-export type InfoMenuIngredientProps = {
-  content: string[];
-};
+import { InfoMenuIngredientProps } from "./InfoProps";
+
 const InfoMenuIngredient = ({ content }: InfoMenuIngredientProps) => {
   return (
     <div className="w-px360">

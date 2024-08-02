@@ -1,8 +1,6 @@
-type InfoMenuImageProps = {
-  content: string;
-};
+import { InfoContentProps } from "./InfoProps";
 
-const InfoMenuImage = ({ content }: InfoMenuImageProps) => {
+const InfoMenuImage = ({ content }: InfoContentProps) => {
   return (
     <div className="w-px300 h-px300 rounded-lg">
       <img className="size-full object-cover" src={`${content}`}></img>

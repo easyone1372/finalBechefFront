@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
-import InfoReviewInput from "../atom/InfoReviewInput";
-import InfoSubmitBtn from "../atom/InfoSubmitBtn";
+import InfoReviewInput from "../../atom/InfoReviewInput";
+import InfoSubmitBtn from "../../atom/InfoSubmitBtn";
 import InfoReviewStarComponent from "./InfoReviewStarComponent";
 import { InfoReviewComponentProps } from "./InfoReviewComponent";
 import { log } from "console";
@@ -10,7 +10,7 @@ import {
   INFO_REVIEW_INPUT,
   INFO_REVIEW_LIST,
   INFO_UPDATE_STORE_RATING,
-} from "../../Urls/URLList";
+} from "../../../Urls/URLList";
 
 type InfoReviewInputBoxProps = {
   store_id: number;
@@ -192,7 +192,7 @@ const InfoReviewInputBox = ({
         initialRating={reviewRating}
         reset={reviewSubmitted}
       />
-      <div className="flex gap-px10 justify-center items-center hover:cursor-pointer">
+      <div className="flex gap-px10 justify-center hover:cursor-pointer">
         <InfoReviewInput setComment={setComment} reset={resetInput} />
         <InfoSubmitBtn
           clickEvent={(e) => {

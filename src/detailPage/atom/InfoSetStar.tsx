@@ -1,17 +1,12 @@
-import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import InfoStarIcon from "./InfoStarIcon";
+import { InfoSolidStarIcon } from "./InfoIconsModule";
+import { InfoContentProps } from "./InfoProps";
 
 //별점 컴포넌트
-type InfoSetStarProps = {
-  starNum: number;
-};
-
-const InfoSetStar = ({ starNum }: InfoSetStarProps) => {
+const InfoSetStar = ({ content }: InfoContentProps) => {
   return (
     <div className="flex">
-      <InfoStarIcon />
-      <div className="font-semibold">{starNum}</div>
+      <InfoSolidStarIcon />
+      <div className="font-semibold">{content}</div>
     </div>
   );
 };

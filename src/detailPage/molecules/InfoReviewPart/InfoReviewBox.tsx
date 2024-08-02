@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
-import InfoReviewInput from "../atom/InfoReviewInput";
-import InfoSubmitBtn from "../atom/InfoSubmitBtn";
-import InfoSubTitle from "../atom/InfoSubTitle";
+import InfoReviewInput from "../../atom/InfoReviewInput";
+import InfoSubmitBtn from "../../atom/InfoSubmitBtn";
+import InfoSubTitle from "../../atom/InfoSubTitle";
 import { InfoReviewComponentProps } from "./InfoReviewComponent";
 import InfoReviewInputBox from "./InfoReviewInputBox";
 import InfoReviewList from "./InfoReviewList";
 import axios from "axios";
-import { INFO_REVIEW_LIST } from "../../Urls/URLList";
+import { INFO_REVIEW_LIST } from "../../../Urls/URLList";
 
 //상세페이지 - 리뷰 전체 박스
 type InfoReviewBoxProps = {

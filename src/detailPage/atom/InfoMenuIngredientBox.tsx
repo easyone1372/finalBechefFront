@@ -1,9 +1,6 @@
 import InfoMenuIngredient from "./InfoMenuIngredient";
+import { InfoMenuIngredientBoxProps } from "./InfoProps";
 
-type InfoMenuIngredientBoxProps = {
-  menuContent: string[];
-  menuText: string;
-};
 const InfoMenuIngredientBox = ({
   menuText,
   menuContent,

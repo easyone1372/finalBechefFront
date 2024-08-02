@@ -1,11 +1,9 @@
 //밀키트 메뉴 출력 컴포넌트
 
-import InfoMenuImage from "../atom/InfoMenuImage";
-import InfoMenuIngredient from "../atom/InfoMenuIngredient";
-import InfoMenuIngredientBox from "../atom/InfoMenuIngredientBox";
-import InfoMenuText from "../atom/InfoMenuText";
-import InfoMenuTextBox from "../atom/InfoMenuTextBox";
-import InfoMenuTitle from "../atom/InfoMenuTitle";
+import InfoMenuImage from "../../atom/InfoMenuImage";
+import InfoMenuIngredientBox from "../../atom/InfoMenuIngredientBox";
+import InfoMenuTextBox from "../../atom/InfoMenuTextBox";
+import InfoMenuTitle from "../../atom/InfoMenuTitle";
 
 export type InfoMenuComponentProps = {
   kitName: string;
@@ -30,12 +28,11 @@ const InfoMenuComponent = ({
   calories,
   description,
 }: InfoMenuComponentProps) => {
-  // 리팩토링 필수!!!!!!!
   return (
-    <div className="flex justify-between items-center text-base gap-1 w-full">
+    <div className="flex justify-between items-center text-base mt-px20 gap-1 w-full">
       <div className="flex gap-px20 justify-center">
         <InfoMenuImage content={imageUrl} />
-        <div className="flex flex-col gap-px20 ">
+        <div className="flex flex-col gap-px20 mt-px10">
           <InfoMenuTitle content={kitName} />
 
           <div className="flex flex-col gap-px10 w-px445">

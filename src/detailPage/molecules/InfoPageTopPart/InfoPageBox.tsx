@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import InfoPageComponent, { InfoPageComponentProps } from "./InfoPageComponent";
 import axios from "axios";
-import { INFO_PAGE } from "../../Urls/URLList";
+import { INFO_PAGE } from "../../../Urls/URLList";
 
 export type InfoPageBoxProps = {
   store_id: number; // 가게ID

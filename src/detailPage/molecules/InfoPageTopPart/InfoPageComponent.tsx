@@ -1,4 +1,4 @@
-import InfoSubTitle from "../atom/InfoSubTitle";
+import InfoSubTitle from "../../atom/InfoSubTitle";
 import InfoDescriptionBox from "./InfoDescriptionBox";
 import InfoTitleBox from "./InfoTitleBox";
 import InfoTopImage from "./InfoTopImage";
