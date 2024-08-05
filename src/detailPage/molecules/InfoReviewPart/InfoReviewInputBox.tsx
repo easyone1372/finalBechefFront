@@ -72,7 +72,7 @@ const InfoReviewInputBox = ({
       );
 
       const data = response.data.reverse();
-      console.log("리뷰데이터" + data);
+      // console.log("리뷰데이터" + data);
 
       setInfoReviewList(data);
     } catch (error) {
@@ -88,7 +88,6 @@ const InfoReviewInputBox = ({
 
     if (!isTokenValid()) {
       alert("로그인 정보가 없습니다. 다시 로그인해주세요.");
-
       return;
     }
 
@@ -103,13 +102,13 @@ const InfoReviewInputBox = ({
         throw new Error("토큰이 없습니다.");
       }
       const decodedToken = jwtDecode(token);
-      console.log("Sending review data:", {
-        token: decodedToken,
-        memberIdx: member_idx,
-        storeId: store_id,
-        comment: comment,
-        reviewRating: reviewRating,
-      });
+      // console.log("Sending review data:", {
+      //   token: decodedToken,
+      //   memberIdx: member_idx,
+      //   storeId: store_id,
+      //   comment: comment,
+      //   reviewRating: reviewRating,
+      // });
       const response = await axios.post<ReviewResponse>(
         INFO_REVIEW_INPUT(),
         {
@@ -122,7 +121,7 @@ const InfoReviewInputBox = ({
           headers: { Authorization: `Bearer ${token}` },
         }
       );
-      console.log("리뷰가 성공적으로 제출되었습니다.", response.data);
+      // console.log("리뷰가 성공적으로 제출되었습니다.", response.data);
 
       // 여기서 알림을 표시합니다
       alert("리뷰가 성공적으로 등록되었습니다.");
@@ -152,7 +151,7 @@ const InfoReviewInputBox = ({
       setReviewRating(0);
       setReviewSubmitted(false);
       setResetInput(false);
-      console.log("초기화됨");
+      // console.log("초기화됨");
     }
   }, [reviewSubmitted]);
 

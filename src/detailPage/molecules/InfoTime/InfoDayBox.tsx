@@ -36,7 +36,7 @@ const InfoDayBox = ({ store_id }: InfoDayBoxProps) => {
           isClosed: item.openTime === null && item.closeTime === null,
         }));
 
-        console.log("dayData:", mappedData);
+        // console.log("dayData:", mappedData);
         setDayDetail(mappedData);
       } catch (error) {
         console.error("영업 시간 정보를 가져오는 중 오류 발생:", error);
