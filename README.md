@@ -124,7 +124,7 @@
 - 관리자 페이지중 메뉴등록에서 각 매장별 메뉴를 등록 할 수 있습니다.
   ![메뉴등록](https://github.com/user-attachments/assets/86fea0ed-016e-49eb-9d69-d9a25c14a7a8)
 - 관리자 페이지중 재고수정에서 각 매장별 메뉴의 재고를 수정 할 수 있습니다.
-  ![재고 수정 영상](https://github.com/user-attachments/assets/439b2072-a2d8-4922-9520-fbfa4d435cba)
+  ![재고 수정 영상](https://github.com/user-attachments/assets/5886b5e0-1c0c-4662-9687-1dfd5fb40656)
 
   
 느낀점
