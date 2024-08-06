@@ -57,7 +57,7 @@ const SearchResults = forwardRef<HTMLUListElement, SearchResultsProps>(
           >
             <div className="w-full h-70">
               <img
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover h-[250px]"
                 src={`${result.img}`}
                 alt={`${result.store_name}`}
               />

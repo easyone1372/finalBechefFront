@@ -89,7 +89,7 @@ const KitItem: React.FC<KitItemProps> = ({ kit, onUpdate }) => {
   const formatPrice = (menu_price: number) => Math.floor(menu_price);
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl">
+    <div className="flex flex-col bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl">
       <img
         src={kit.menu_image_url}
         alt={kit.menu_name}
@@ -101,7 +101,7 @@ const KitItem: React.FC<KitItemProps> = ({ kit, onUpdate }) => {
         price={formatPrice(kit.menu_price)}
         quantity={kit.quantity}
       />
-      <div className="p-4 bg-gray-50">
+      <div className="flex flex-col mt-auto p-4 bg-gray-50">
         <div className="mb-2 text-center font-bold">
           가격: {formatPrice(kit.menu_price)}원
         </div>
