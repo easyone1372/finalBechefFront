@@ -7,6 +7,7 @@
 - 배포 URL:(https://delightful-meadow-09cec9100.5.azurestaticapps.net)
 - Admin ID: admin
 - Admin PWD: admin1111
+- 2024.12.16 서버비 이슈로 호스팅이 만료되어 접속할 수 없습니다.
 
 ---
 
